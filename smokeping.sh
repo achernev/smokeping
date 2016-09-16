@@ -197,6 +197,6 @@ elif ps -ef | egrep -v 'grep|smokeping.sh' | grep -q smokeping; then
     echo "Service already running, please restart container to apply changes"
 else
     tail -F /tmp/log &
-    exec /etc/init.d/smokeping start
+    /etc/init.d/smokeping start
     exec lighttpd -D -f /etc/lighttpd/lighttpd.conf
 fi
